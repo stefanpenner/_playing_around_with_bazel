@@ -1,0 +1,8 @@
+load("//:concat.bzl", "concat")
+
+concat(
+  name="bundle",
+  srcs=["//lib-b:bundle", "//lib-a:bundle"],
+  output="bundle.js"
+)
+

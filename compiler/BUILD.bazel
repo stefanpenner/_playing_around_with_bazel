@@ -1,0 +1,8 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+# build the compiler
+go_binary(
+  name="compiler",
+  srcs=["compiler.go"],
+  visibility=["//visibility:public"],
+)
+
