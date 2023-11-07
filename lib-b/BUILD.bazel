@@ -5,7 +5,6 @@ load("//compiler:compiler.bzl", "compiler")
 compiler(
   name="build",
   srcs=glob(["**/*.ts"]),
-  compiler="//compiler:compiler"
 )
 
 # concat the compiled files into a single bundle

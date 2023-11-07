@@ -27,6 +27,6 @@ compiler = rule(
   implementation=_compiler,
   attrs={
     'srcs': attr.label_list(allow_files=True),
-    'compiler': attr.label(allow_single_file=True)
+    'compiler': attr.label(allow_single_file=True, default = "//compiler:compiler")
   },
 )
