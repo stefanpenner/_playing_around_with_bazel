@@ -1,0 +1,5 @@
+- [x] POC that builds a compiler, then uses that compiler to build other files, then concats those files
+- [x] improve by using providers & toolchains
+- [ ] extract compiler into its own repo, and load it
+- [ ] explore repositories
+- [ ] explore environments for execution
