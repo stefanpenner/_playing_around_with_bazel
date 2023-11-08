@@ -1,8 +1,6 @@
 - [x] POC that builds a compiler, then uses that compiler to build other files, then concats those files
 - [x] improve by using providers & toolchains
 - [x] extract compiler into its own workspace (bazel repository), and load it
-- [ ] explore bzlmod
-- [ ] explore repositories
-- [ ] explore environments for execution
-- [ ] explore node modules
+- [x] explore bzlmod
 - [ ] explore go modules
+- [ ] explore node modules

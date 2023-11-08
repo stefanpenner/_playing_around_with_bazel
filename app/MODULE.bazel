@@ -1,0 +1,8 @@
+bazel_dep(name = "the-compiler")
+
+local_path_override(
+    module_name = "the-compiler",
+    path = "../compiler",
+)
+
+register_toolchains("@the-compiler//compiler:compiler_osx_toolchain")
