@@ -1,3 +1,4 @@
 # bazel cquery "//compiler:*" --output=starlark --starlark:expr='{target, list(providers(target))]'
+# to use this file run `bazel cquery "//compiler:*" --output=starlark --starlark:file=./target_providers.cquery`
 def format(target):
   return [target, list(providers(target))]
