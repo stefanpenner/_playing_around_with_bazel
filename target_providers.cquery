@@ -1,0 +1,3 @@
+# bazel cquery "//compiler:*" --output=starlark --starlark:expr='{target, list(providers(target))]'
+def format(target):
+  return [target, list(providers(target))]
