@@ -4,3 +4,5 @@
 - [ ] explore bzlmod
 - [ ] explore repositories
 - [ ] explore environments for execution
+- [ ] explore node modules
+- [ ] explore go modules
