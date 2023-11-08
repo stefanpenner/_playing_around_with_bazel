@@ -9,8 +9,8 @@ Directories:
 
 Stuff to explore:
 * [x] convert from WORKSPACE to Bazel Modules
-  * [ ] figure out why compiler/WORKSPACE is needed
-  * [ ] rename the-compiler back to compiler
+  * [x] figure out why compiler/WORKSPACE is needed
+  * [x] rename the-compiler back to compiler
 * [x] using toolchains
   * [ ] polish toolchain usage
 * [ ] using go workspaces
