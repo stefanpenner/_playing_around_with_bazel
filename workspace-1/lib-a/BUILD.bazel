@@ -1,5 +1,5 @@
 load("//:concat.bzl", "concat")
-load("//compiler:compiler.bzl", "compiler")
+load("@the-compiler//compiler:compiler.bzl", "compiler")
 
 # compile the project using the compiler
 compiler(
