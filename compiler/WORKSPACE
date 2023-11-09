@@ -1,4 +1,0 @@
-# this file is needed to prevent the following error:
-# ERROR: <builtin>: fetching local_repository rule //:the-compiler~override: java.io.IOException: No WORKSPACE file found in /private/var/tmp/_bazel_stefanpenner/6d0cac07f06b75d2e325001a5cfa100f/external/the-compiler~override
-#
-# TODO: understand the problem and fix it

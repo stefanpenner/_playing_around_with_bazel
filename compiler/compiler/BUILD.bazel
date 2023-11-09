@@ -1,28 +1,38 @@
-load("@rules_go//go:def.bzl", "go_binary")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
 load("//compiler:compiler.bzl", "compiler_toolchain")
 
-# build the compiler
-go_binary(
-  name="compiler",
-  srcs=["compiler.go"],
-  visibility=["//visibility:public"],
-)
-
 compiler_toolchain(
-  name = "compiler_toolchain",
-  compiler_path = ":compiler",
+    name = "compiler_toolchain",
+    compiler_path = ":compiler",
 )
 
 toolchain(
-  name = "compiler_osx_toolchain",
-  exec_compatible_with = [
-    "@platforms//os:osx",
-  ],
-  target_compatible_with = [
-    "@platforms//os:osx",
-  ],
-  toolchain = ":compiler_toolchain",
-  toolchain_type = ":toolchain_type",
+    name = "compiler_osx_toolchain",
+    exec_compatible_with = [
+        "@platforms//os:osx",
+    ],
+    target_compatible_with = [
+        "@platforms//os:osx",
+    ],
+    toolchain = ":compiler_toolchain",
+    toolchain_type = ":toolchain_type",
 )
 
 toolchain_type(name = "toolchain_type")
+
+go_library(
+    name = "compiler_lib",
+    srcs = [
+        "compiler.go",
+        "implmentation.go",
+    ],
+    importpath = "iamstef.net/compiler",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_fatih_color//:color"],
+)
+
+go_binary(
+    name = "compiler",
+    embed = [":compiler_lib"],
+    visibility = ["//visibility:public"],
+)

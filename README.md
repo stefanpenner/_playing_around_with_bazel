@@ -14,5 +14,6 @@ Stuff to explore:
 * [x] using toolchains
   * [ ] polish toolchain usage
 * [ ] using go workspaces
-* [ ] using go modules
+* [x] using go modules
 * [ ] using node modules
+* [x] bazel test
