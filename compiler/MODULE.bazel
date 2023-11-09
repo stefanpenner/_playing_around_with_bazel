@@ -8,7 +8,7 @@ bazel_dep(name = "gazelle", version = "0.34.0")
 
 # teach go_mod about our go.mod file
 go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
-go_deps.from_file(go_mod = "//compiler:go.mod")
+go_deps.from_file(go_mod = "//:compiler:go.mod")
 
 # configure "top-level" dependencies
 # TODO: why is this required, and if it is why doesn't gazelle generate it...
