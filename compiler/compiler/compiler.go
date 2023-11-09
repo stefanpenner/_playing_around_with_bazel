@@ -1,8 +1,9 @@
 package main
 import (
   "os"
+  i "iamstef.net/implementation"
 )
 
 func main() {
-  implementation(os.Args[3], os.Args[2])
+  i.Implementation(os.Args[3], os.Args[2])
 }
