@@ -1,4 +1,4 @@
-load("@rules_go//go:def.bzl", "go_binary", "go_library")
+load("@rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
 load("//compiler:compiler.bzl", "compiler_toolchain")
 
 compiler_toolchain(
@@ -29,10 +29,22 @@ go_library(
     importpath = "iamstef.net/compiler",
     visibility = ["//visibility:private"],
     deps = ["@com_github_fatih_color//:color"],
+    data = [":I_AM_DATA"]
 )
 
 go_binary(
     name = "compiler",
     embed = [":compiler_lib"],
     visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "implementation_test",
+    embed = [":compiler_lib"],
+    srcs = ["implementation_test.go"],
+    visibility = ["//visibility:public"],
+    data = [":faux_mysql_dir"],
+    env = {
+        "MYSQL_DIR": "$(location :faux_mysql_dir)",
+    },
 )
