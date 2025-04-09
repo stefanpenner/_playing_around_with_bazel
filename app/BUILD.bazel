@@ -1,8 +1,17 @@
+load("@rules_go//go:def.bzl", "go_binary")
 load("//:concat.bzl", "concat")
 
-concat(
-  name="bundle",
-  srcs=["//lib-b:bundle", "//lib-a:bundle"],
-  output="bundle.js"
+go_binary(
+    name = "the_concatenator",
+    srcs = ["the_concatenator.go"],
+    visibility = ["//visibility:public"],
 )
 
+concat(
+    name = "bundle",
+    srcs = [
+        "//lib-a:bundle",
+        "//lib-b:bundle",
+    ],
+    output = "bundle.js",
+)

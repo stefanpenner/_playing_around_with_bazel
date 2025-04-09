@@ -1,16 +1,16 @@
-load("//:concat.bzl", "concat")
 load("@the-compiler//compiler:compiler.bzl", "compiler")
+load("//:concat.bzl", "concat")
 
 # compile the project using the compiler
 compiler(
-  name="build",
-  srcs=glob(["**/*.ts"]),
+    name = "build",
+    srcs = glob(["**/*.ts"]),
 )
 
 # concat the compiled files into a single bundle
 concat(
-  name="bundle",
-  srcs=[":build"],
-  output="bundle.js",
-  visibility=["//visibility:public"]
+    name = "bundle",
+    srcs = [":build"],
+    output = "bundle.js",
+    visibility = ["//visibility:public"],
 )
