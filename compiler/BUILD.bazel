@@ -1,5 +1,9 @@
 load("@rules_go//go:def.bzl", "go_binary", "go_library")
-load("//compiler:compiler.bzl", "compiler_toolchain")
+load("//:compiler.bzl", "compiler_toolchain")
+
+load("@gazelle//:def.bzl", "gazelle")
+
+gazelle(name = "gazelle")
 
 compiler_toolchain(
     name = "compiler_toolchain",

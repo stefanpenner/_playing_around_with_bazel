@@ -1,4 +1,4 @@
-package main
+package implementation
 
 import (
   "os"
@@ -8,7 +8,7 @@ import (
    "github.com/fatih/color"
 )
 
-func implementation(input string, output string) {
+func Implementation(input string, output string) {
   sourceFile, err := os.Open(input)
 
   if err != nil {
